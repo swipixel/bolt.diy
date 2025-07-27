@@ -16,6 +16,11 @@ export default defineConfig((config) => {
     build: {
       target: 'esnext',
     },
+    server: {
+      host: true,
+      port: Number(process.env.PORT) || 5173,
+      allowedHosts: ['bolt-diy-gxdf.onrender.com'],
+    },
     plugins: [
       nodePolyfills({
         include: ['buffer', 'process', 'util', 'stream'],
